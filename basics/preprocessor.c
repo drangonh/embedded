@@ -43,11 +43,14 @@ __STDC__	当编译器以 ANSI 标准编译时，则定义为 1
 #include <stdio.h>
 
 #define tokenpaster(n) printf ("token" #n " = %d", token##n)
+#define  message_for(a, b)  \
+    printf(#a " and " #b ": We love you!\n")
 
 int main(void)
 {
-   int token34 = 40;
+    int token34 = 40;
    
-   tokenpaster(34);
+    tokenpaster(34);
+    message_for(Carole, Debra);
    return 0;
 }
